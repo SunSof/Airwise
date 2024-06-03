@@ -1,0 +1,22 @@
+<div class="flex justify-center">
+  <div class="text-center mt-10 rounded-2xl bg-blue-300 basis-2/4 drop-shadow-2xl">
+    <h1 class="self-center text-xl text-indigo-950 font-bold">First <%=@count%> <%=@model%></h1>
+    <ul>
+      <% @subjects.each do |subject| %>
+        <li class ="border-t-4 border-indigo-950 text-indigo-950"><%= subject %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+<div class="flex justify-center">
+  <div class="h-14 w-3/4 flex justify-around text-center mt-10 border rounded-2xl border-indigo-950 bg-blue-300">
+    <%= form_tag(index_path, method: :get) do %>
+      <%= label_tag :model, "Model" %>
+      <%= text_field_tag :model %>
+      <%= label_tag :count, "Count" %>
+      <%= text_field_tag :count %>
+      <%= submit_tag "Submit" %>
+    <% end %>
+  </div>
+</div>
+<%= render "pages/table" %>

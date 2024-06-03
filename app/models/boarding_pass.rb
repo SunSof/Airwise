@@ -1,0 +1,2 @@
+class BoardingPass < ApplicationRecord
+end

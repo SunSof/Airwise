@@ -1,0 +1,32 @@
+<h1 class="py-10 font-rubik text-blue-600 text-center text-6xl">Airports</h1>
+<div class="flex justify-center">
+  <%= form_with url: sort_airports_path, method: :get, local: true do %>
+    <%= text_field_tag :field, nil, placeholder: "Field name", class: "w-52 border rounded-2xl focus:ring-4 px-6 py-2 text-indigo-950"%>
+    <%= text_field_tag :letter, nil, placeholder: "Letter", class:"w-52 border rounded-2xl focus:ring-4 mx-10 px-6 py-2  text-indigo-950" %>
+    <%= submit_tag "Sort", :method => "post", class:"w-52 font-bold bg-blue-300 rounded-2xl hover:bg-blue-600 focus:ring-4 px-4 py-2 text-center text-4xl text-indigo-950" %>
+  <% end %>
+</div>
+<div class="flex justify-center py-10">
+  <div class="bg-blue-300 rounded-2xl">
+    <table class="table-auto text-indigo-950 justyfy-center border-collapse border border-indigo-950">
+      <thead>
+        <tr>
+          <th class="border border-indigo-950">ID</th>
+          <th class="border border-indigo-950">Name</th>
+          <th class="border border-indigo-950">City</th>
+          <th class="border border-indigo-950">Timezone</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @airports.each do |airport| %>
+          <tr>
+            <td class="border border-indigo-950"><%= airport.id %> </td>
+            <td class="border border-indigo-950"><%= airport.airport_name["en"] %></td>
+            <td class="border border-indigo-950"><%= airport.city["en"] %></td>
+            <td class="border border-indigo-950"><%= airport.timezone %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

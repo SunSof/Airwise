@@ -1,0 +1,2 @@
+class TicketFlight < ApplicationRecord
+end
