@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  aircraft_code: MyString
+  model: 
+  range: 1
+
+two:
+  aircraft_code: MyString
+  model: 
+  range: 1

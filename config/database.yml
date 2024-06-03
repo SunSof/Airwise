@@ -1,0 +1,22 @@
+default: &default
+  adapter: postgresql
+  encoding: UTF-8
+  host: localhost
+  user: postgres
+  password: postgres
+  database: airwise
+  # For details on connection pooling, see Rails configuration guide
+  # https://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: airwise_development
+
+test:
+  <<: *default
+  database: airwise_test
+
+production:
+  <<: *default
+  database: airwise_prod
